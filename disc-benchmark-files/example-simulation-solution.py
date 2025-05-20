@@ -33,8 +33,8 @@ print('NRMS:', np.mean((Ytrain_pred-Ytrain)**2)**0.5/Ytrain.std()*100,'%')
 
 def simulation_IO_model(f, ulist, ylist, skip=50):
 
-    upast = ulist[skip-na:skip].tolist() #good initialization
-    ypast = ylist[skip-nb:skip].tolist()
+    upast = ulist[skip-nb:skip].tolist() #good initialization
+    ypast = ylist[skip-na:skip].tolist()
     Y = ylist[:skip].tolist()
     for u in ulist[skip:]:
         x = np.concatenate([upast,ypast],axis=0)
